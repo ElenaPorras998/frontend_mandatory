@@ -17,3 +17,13 @@ main#main {
 main article {
     background: #f3f3f3;
 }
+
+@media print {
+    main article {
+        background: white;
+    }
+
+    img {
+        width: 100px;
+    }
+}
