@@ -9,7 +9,7 @@
 main#main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: 40vw;
+    grid-auto-rows: auto;
     grid-gap: 20px;
     max-width: 90%;
     margin:auto;
