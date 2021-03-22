@@ -27,3 +27,30 @@ let ff = {
     "title": "Fast and Furious 9",
     "url": "https://www.youtube.com/watch?v=FUK2kdPsBws"
 }
+
+
+
+"Pirates 1" : {
+    "title": "Pirates of the Caribbean: Curse of the black pearl",
+    "url":  "https://www.youtube.com/watch?v=naQr0uTrH_s"
+},
+"Pirates 2" : {
+    "title": "Pirates of the Caribbean Dead Man's Chest",
+    "url":  "https://www.youtube.com/watch?v=ozk0-RHXtFw"
+},
+"Pirates 3" : {
+    "title": "Pirates of the Caribbean: At World's End",
+    "url":  "https://www.youtube.com/watch?v=HKSZtp_OGHY"
+},
+"Pirates 4" : {
+    "title": "Pirates of the Caribbean: On Stranger Tides",
+    "url":  "https://www.youtube.com/watch?v=t5AqJww06bw"
+},
+"Pirates 5" : {
+    "title": "Pirates of the Caribbean: Salazar's Revenge",
+    "url":  "https://www.youtube.com/watch?v=IPf4rGw3XHw"
+},
+"Pulp Fiction" :{
+    "title": "Pulp Fiction",
+    "url":  "https://www.youtube.com/watch?v=s7EdQ4FqbhY"
+}

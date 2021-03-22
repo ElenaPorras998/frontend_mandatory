@@ -2,6 +2,9 @@
 {
     margin: 0;
     background: #eee;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px auto 70px;
 }
 main#main {
     display: grid;
