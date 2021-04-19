@@ -57,3 +57,13 @@ main article > figure img {
         width: 100%;
     }  
 }
+
+@media print {
+    main article {
+        background: white;
+    }
+
+    img {
+        width: 100px;
+    }
+}
