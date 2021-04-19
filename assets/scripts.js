@@ -56,7 +56,7 @@ const container = document.getElementById('main');
 for (var key in movies) {
     if (movies.hasOwnProperty(key)) {
         let movie = movies[key];
-        let url = 'http://www.omdbapi.com/?t=' + movie.title + '&apikey=179f50a5';
+        let url = 'https://www.omdbapi.com/?t=' + movie.title + '&apikey=179f50a5';
 
         fetch(url)
             .then(response => {
@@ -105,8 +105,11 @@ for (var key in movies) {
                 const desc = document.createElement('p');
                 desc.setAttribute('class', 'plot');
                 desc.textContent = data.Plot.substring(0 , 200) + '...';
+                const p = document.createElement('p');
+                p.textContent = 'Age:' + _calculateAge(new Date(data.Released));
 
                 content.appendChild(desc);
+                content.appendChild(p);
 
                 card.appendChild(heading);
                 card.appendChild(content);
@@ -117,4 +120,10 @@ for (var key in movies) {
                 console.log(err);
             })
     }
+}
+
+function _calculateAge(released) { 
+    var ageDifMs = Date.now() - released.getTime();
+    var ageDate = new Date(ageDifMs); 
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
