@@ -114,7 +114,6 @@ for (var key in movies) {
                 card.appendChild(heading);
                 card.appendChild(content);
                 container.appendChild(card);
-                console.log(data);
             })
             .catch(err => {
                 console.log(err);
