@@ -7,13 +7,53 @@
     grid-template-rows: 70px auto 70px;
 }
 main#main {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: auto;
+    display: flex;
+    flex-wrap: wrap;
     grid-gap: 20px;
     max-width: 90%;
     margin:auto;
 }
 main article {
     background: #f3f3f3;
+}
+main article > figure img {
+    max-width: 100%;
+}
+.plot {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+}
+.rating-fig {
+    display: flex;
+    align-items: center;
+}
+.rating-fig .rated {
+    font-size: 24px;
+}
+@media (min-width: 1200px) {
+    main article {
+        width: calc(20% - 20px);
+    }  
+}
+@media (max-width: 1200px) {
+    main article {
+        width: calc(25% - 20px);
+    }  
+}
+@media (max-width: 980px) {
+    main article {
+        width: calc(33.333% - 20px);
+    }  
+}
+@media (max-width: 768px) {
+    main article {
+        width: calc(50% - 20px);
+    }  
+}
+@media (max-width: 600px) {
+    main article {
+        width: 100%;
+    }  
 }

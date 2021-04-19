@@ -2,16 +2,12 @@
 
 let movies = {
     "Batman": {
-
         "title": "The Dark Knight",
-
         "url": "https://www.youtube.com/watch?v=EXeTwQWrcwY"
 
     },
     "matrix": {
-
         "title": "The Matrix",
-
         "url": "https://www.youtube.com/watch?v=vKQi3bBA1y8"
 
     },
@@ -32,7 +28,7 @@ let movies = {
         "url": "https://www.youtube.com/watch?v=FUK2kdPsBws"
     },
     "Pirates 1": {
-        "title": "Pirates of the Caribbean: Curse of the black pearl",
+        "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
         "url": "https://www.youtube.com/watch?v=naQr0uTrH_s"
     },
     "Pirates 2": {
