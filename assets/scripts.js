@@ -63,6 +63,54 @@ for (var key in movies) {
                 return response.json();
             })
             .then(data => {
+                const container = document.getElementById('main');
+                const card = document.createElement('article');
+                const heading = document.createElement('figure');
+                const title = document.createElement('h3');
+                title.textContent = data.Title;
+                const year = document.createElement('span');
+                year.textContent = '(' + data.Year + ')';
+                const thumbnail = document.createElement('img');
+                thumbnail.setAttribute('src', data.Poster);
+
+                title.appendChild(year);
+                heading.appendChild(title);
+                heading.appendChild(thumbnail);
+
+                
+
+                const content = document.createElement('div');
+                content.setAttribute('class', 'movie-content');
+                const ratingFig = document.createElement('figure');
+                ratingFig.setAttribute('class', 'rating-fig');
+                const star = document.createElement('img');
+                star.setAttribute('src', 'assets/images/star.png');
+                const rating = document.createElement('div');
+                rating.setAttribute('class', 'rating');
+
+                const rated = document.createElement('span');
+                rated.setAttribute('class', 'rated');
+                rated.textContent = data.imdbRating
+                const ratespan = document.createElement('span');
+                ratespan.textContent = '/10';
+
+
+                ratingFig.appendChild(star);
+                rating.appendChild(rated);
+                rating.appendChild(ratespan);
+
+                ratingFig.appendChild(rating);
+                content.appendChild(ratingFig)
+
+                const desc = document.createElement('p');
+                desc.setAttribute('class', 'plot');
+                desc.textContent = data.Plot.substring(0 , 200) + '...';
+
+                content.appendChild(desc);
+
+                card.appendChild(heading);
+                card.appendChild(content);
+                container.appendChild(card);
                 console.log(data);
             })
             .catch(err => {
