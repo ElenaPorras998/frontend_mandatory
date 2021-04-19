@@ -4,12 +4,10 @@ let movies = {
     "Batman": {
         "title": "The Dark Knight",
         "url": "https://www.youtube.com/watch?v=EXeTwQWrcwY"
-
     },
     "matrix": {
         "title": "The Matrix",
         "url": "https://www.youtube.com/watch?v=vKQi3bBA1y8"
-
     },
     "ib": {
         "title": "Inglorious Bastards",
@@ -24,7 +22,7 @@ let movies = {
         "url": "https://www.youtube.com/watch?v=T50_qHEOahQ"
     },
     "ff": {
-        "title": "Fast and Furious 9",
+        "title": "Fast & Furious 6",
         "url": "https://www.youtube.com/watch?v=FUK2kdPsBws"
     },
     "Pirates 1": {
@@ -44,7 +42,7 @@ let movies = {
         "url": "https://www.youtube.com/watch?v=t5AqJww06bw"
     },
     "Pirates 5": {
-        "title": "Pirates of the Caribbean: Salazar's Revenge",
+        "title": "Pirates of the Caribbean: Dead Men Tell No Tales",
         "url": "https://www.youtube.com/watch?v=IPf4rGw3XHw"
     },
     "Pulp Fiction": {
@@ -52,3 +50,23 @@ let movies = {
         "url": "https://www.youtube.com/watch?v=s7EdQ4FqbhY"
     }
 };
+
+const container = document.getElementById('main');
+
+for (var key in movies) {
+    if (movies.hasOwnProperty(key)) {
+        let movie = movies[key];
+        let url = 'http://www.omdbapi.com/?t=' + movie.title + '&apikey=179f50a5';
+
+        fetch(url)
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+}
