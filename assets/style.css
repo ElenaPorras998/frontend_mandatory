@@ -1,10 +1,19 @@
 ﻿body
 {
     margin: 0;
-    background: #eee;
+    background: #1a1a1a;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 70px auto 70px;
+    grid-row-gap: 20px;
+    font-family: 'Work Sans', sans-serif;
+}
+header {
+    background: linear-gradient(
+-2deg
+, black, #2a2a2a);
+    padding: 0 20px;
+    color: #fff;
 }
 main#main {
     display: flex;
@@ -14,17 +23,20 @@ main#main {
     margin:auto;
 }
 main article {
-    background: #f3f3f3;
+    background: #2d2d2d;
+    color: #fff;
 }
 main article > figure img {
     max-width: 100%;
+    width: 100%;
 }
-.plot {
+.plot, .margins {
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 40px;
     margin-inline-end: 40px;
 }
+
 .rating-fig {
     display: flex;
     align-items: center;

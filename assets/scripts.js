@@ -64,12 +64,12 @@ for (var key in movies) {
             })
             .then(data => {
                 const container = document.getElementById('main');
-                const card = document.createElement('article');
+                const card = document.createElement('article');                
                 const heading = document.createElement('figure');
                 const title = document.createElement('h3');
                 title.textContent = data.Title;
                 const year = document.createElement('span');
-                year.textContent = '(' + data.Year + ')';
+                year.textContent = ' (' + data.Year + ')';
                 const thumbnail = document.createElement('img');
                 thumbnail.setAttribute('src', data.Poster);
 
@@ -103,9 +103,10 @@ for (var key in movies) {
                 content.appendChild(ratingFig)
 
                 const desc = document.createElement('p');
-                desc.setAttribute('class', 'plot');
+                desc.setAttribute('class', 'plot margins');
                 desc.textContent = data.Plot.substring(0 , 200) + '...';
                 const p = document.createElement('p');
+                p.setAttribute('class', 'age margins');
                 p.textContent = 'Age:' + _calculateAge(new Date(data.Released));
 
                 content.appendChild(desc);
@@ -120,6 +121,7 @@ for (var key in movies) {
             })
     }
 }
+
 
 function _calculateAge(released) { 
     var ageDifMs = Date.now() - released.getTime();
