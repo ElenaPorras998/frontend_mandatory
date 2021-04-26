@@ -51,6 +51,8 @@ let movies = {
     }
 };
 
+const aside = document.getElementById('pop-up');
+const trailer = document.getElementById('video');
 const container = document.getElementById('main');
 
 for (var key in movies) {
@@ -64,7 +66,9 @@ for (var key in movies) {
             })
             .then(data => {
                 const container = document.getElementById('main');
-                const card = document.createElement('article');                
+                const card = document.createElement('article'); 
+                card.setAttribute('data-yt', movie.url);
+                card.setAttribute('onclick', 'playVideo(this);');
                 const heading = document.createElement('figure');
                 const title = document.createElement('h3');
                 title.textContent = data.Title;
@@ -128,3 +132,36 @@ function _calculateAge(released) {
     var ageDate = new Date(ageDifMs); 
     return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
+//yt
+function getIdFromUrl(videoIdOrUrl) {
+    if (videoIdOrUrl.indexOf('http' === 0) ) {
+        return videoIdOrUrl.split('v=')[1];
+    } else {
+        return videoIdOrUrl;
+    }
+}
+function generateThumbnailUrl(videoIdOrUrl) {
+    return 'https://i3.ytimg.com/vi/' + getIdFromUrl(videoIdOrUrl) + '/default.jpg';
+}
+function generateEmbedUrl(videoIdOrUrl) {
+    return 'https://www.youtube.com/embed/' + getIdFromUrl(videoIdOrUrl);
+}
+
+function playVideo(e) {
+
+    let videoIdOrUrl = e.getAttribute('data-yt');
+    let id = getIdFromUrl(videoIdOrUrl);
+    let thumb = generateThumbnailUrl(videoIdOrUrl); 
+    let embed = generateEmbedUrl(videoIdOrUrl);
+    console.log(embed);
+
+    trailer.innerHTML = '<iframe src="' + embed + '" width="560" height="315"></iframe>';
+    aside.setAttribute('class', 'show');
+
+}
+
+function _closeAside() {
+    aside.className = '';
+    trailer.innerHTML = '';
+};
+
