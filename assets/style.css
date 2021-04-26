@@ -59,12 +59,20 @@ main article > figure img {
     opacity: 1;
 }
 #close {
-    color: #fff;
-    font-size: 20px;
+    color: #999;
+    font-size: 25px;
     position: absolute;
-    right: -20px;
-    top: -20px;
+    right: -25px;
+    top: -25px;
     cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgb(0 0 0 / 50%);
 }
 @media (min-width: 1200px) {
     main article {
